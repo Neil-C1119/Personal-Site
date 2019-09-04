@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Materialize css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Angular js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+    <!-- My stuff -->
+    <link rel="stylesheet" type="text/css" href="../style/styles.css">
+    <script src="../js/scripts.js"></script>
+
+    <!-- Using jQuery to load separate header and footer files -->
+    <script>
+    $(function(){
+      $("#header").load("../blogHeader.html");
+      $("#footer").load("../footer.html");
+    });
+    </script>
+
+  </head>
+
+  <header>
+    <div id="header"></div>
+  </header>
+
+  <body class="blogBody">
+    <div class="container" id="realBlog">
+      <h1 class="realBlogTitle threeDText">[Insert Title]</h1>
+      <p class="entry">[Insert blooooog entry here]</p>
+      <div class="entryInfo">
+        <span class="tag1">IT</span>
+        <span class="tag2"></span>
+        <span class="date">7/14/2019</span>
+        <span class="time">8:30 p.m.</span>
+      </div>
+      <div class="borderBottom"></div>
+    </div>
+  </body>
+
+  <footer class="footer">
+    <div id="footer"></div>
+  </footer>
+</html>

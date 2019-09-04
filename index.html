@@ -1,0 +1,60 @@
+<html>
+  <head>
+      <meta charset="utf-8">
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <!-- Materialize css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+      <!-- Angular js -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+      <!-- My stuff -->
+      <link rel="stylesheet" type="text/css" href="style/styles.css">
+      <script src="js/scripts.js"></script>
+
+      <!-- Using jQuery to load separate header and footer files -->
+      <script>
+      $(function(){
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+      </script>
+
+    </head>
+
+  <header>
+    <div id="header"></div>
+  </header>
+
+  <body class="body">
+
+    <div class="parallax">
+      <p class="meetMe centerBottom">An aspiring web developer and IT specialist</p>
+    </div>
+
+    <div class="twitter">
+      <p class="twitterTitle">What's happening with me on Twitter?</p>
+      <div class="myTwitter">
+        <a class="twitter-timeline" data-height="800" href="https://twitter.com/CrazyGhostAfro?ref_src=twsrc%5Etfw">Tweets by CrazyGhostAfro</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+
+    <div class="blog">
+      <p class="blogTitle">Blog</p>
+      <p class="blogPlaceholder">I have some cool plans, but for now, you can get to my blog by clicking </p>
+      <p class="blogPlaceholder inflate container"><a href="https://neilccurtis.wordpress.com/" target="_blank">here</a></p>
+    </div>
+
+  </body>
+
+  <footer class="footer">
+    <div id="footer"></div>
+  </footer>
+</html>

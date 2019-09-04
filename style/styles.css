@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Coiny|Libre+Barcode+128+Text|Raleway');
+
+
+/* ------------HEADER------------ */
+.header {
+  background-color: #EFEFEF;
+}
+
+.myName {
+  font-size: 60px;
+  font-family: 'Libre Barcode 128 Text', cursive;
+  float: left;
+  padding-left: 15px;
+  margin-top: 10;
+}
+
+.navBar {
+  list-style: none;
+  margin: 15px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.navList {
+  font-size: 25px;
+  margin-top: 10px;
+  padding-left: 7px;
+  padding-right: 10px;
+  font-family: 'Coiny', cursive;
+  margin-right: 4px;
+}
+
+.pageText {
+  color: black;
+}
+
+.page:hover {
+  background-color: #878787;
+  transition: .3s;
+}
+
+
+/* ------------BODY------------ */
+.body {
+  background-color: #A9A9A9;
+}
+
+.main {
+  margin: 20px;
+  background-color: #EFEFEF;
+  border-radius: 10px;
+  border: 1px solid #878787;
+}
+
+.overlay{
+  height: 900px;
+  width: 1920px;
+  background: #212A31;
+  opacity: 0;
+  transition: 1.5s;
+}
+
+.overlay:hover {
+  opacity: .75;
+}
+
+.parallax {
+  position: relative;
+  background-image: url("pics/meTrumpet.jpg");
+  height: 900px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.meetMe{
+  color: #b2c0cb;
+  font-size: 100px;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 10px black;
+}
+
+.centerBottom {
+  text-align: center;
+  position: absolute;
+  bottom: 350px;
+}
+
+.aboutBody {
+  background-color: #025377;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 10px black;
+  color: white;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-left: 450px;
+}
+
+.aboutPicture {
+  height: 400px;
+  width: 348px;
+  box-shadow: 2px 2px 10px black;
+  overflow: auto;
+  float: left;
+  border-radius: 5px;
+}
+
+.aboutText {
+  float: right;
+  padding-right: 300px;
+}
+
+.aboutHeader {
+  font-size: 45px;
+}
+
+.resume {
+  padding-top: 40px;
+}
+
+.resumeLink {
+  padding-right: 350px;
+}
+
+/* ------------Blog------------ */
+.realBlog {
+  background-color: #2d3238;
+  padding-bottom: 40px;
+}
+
+.blogBody {
+  background-color: #2d3238;
+}
+
+.realBlogTitle {
+  font-size: 50px;
+  font-family: 'Coiny', cursive;
+  color: white;
+  float: left;
+}
+
+.entry {
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 10px black;
+  color: #a3a3a3;
+  clear: left;
+}
+
+.entryInfo {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  color: #a3a3a3;
+  clear: left;
+  padding-bottom: 50px;
+}
+
+.welcomeBlog {
+  font-size: 50px;
+  font-family: 'Coiny', cursive;
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.entryInfo span {
+  padding-left: 5px;
+}
+
+.borderBottom {
+  border-bottom: groove #a3a3a3;
+}
+
+.pageButton {
+  background-color: white;
+  margin-left: 5px;
+}
+
+.pagination {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* ------------Twitter------------ */
+.twitter{
+  background-color: #6da3c7;
+  font-size: 50px;
+  font-family: 'Coiny', cursive;
+  text-shadow: 2px 2px 10px black;
+}
+
+.twitterTitle {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.myTwitter {
+  margin: auto;
+  width: 60%;
+  padding-bottom: 37px;
+}
+
+/* ------------Blog Placeholder------------ */
+.blog {
+  background-color: #02686f;
+  font-size: 50px;
+  font-family: 'Coiny', cursive;
+  text-shadow: 2px 2px 10px black;
+}
+
+.blogTitle {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.blogPlaceholder {
+  color: lightblue;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+/* ------------Contact------------ */
+.contactPage {
+  background-color: #09cac7;
+  font-size: 50px;
+  font-family: 'Coiny', cursive;
+  text-shadow: 2px 2px 7px black;
+}
+
+.contactMe {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.contactInfo {
+  font-size: 30px;
+  color: lightgrey;
+  list-style-type: none;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* ------------FOOTER------------ */
+.contactMe {
+  float: left;
+  font-size: 25px;
+  font-family: 'Coiny', cursive;
+  padding-left: 12px;
+}
+
+.footer {
+  background-color: black;
+  padding-top: 20px;
+}
+
+/* ------------EXTRAS------------ */
+.threeDText {
+  text-shadow: 2px 2px 3px #FF0000, -2px -2px 3px #00FFFF;
+}
+
+.threeDBox {
+  box-shadow: 2px 2px 10px #FF0000, -2px -2px 10px #00FFFF;
+}
+
+a:link{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active{
+  text-decoration: none;
+  color: inherit;
+}
+
+.inflate{
+  transform: scale(1);
+  transition: .3s;
+}
+
+.inflate:hover {
+  transform: scale(1.2);
+}
