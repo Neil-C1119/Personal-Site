@@ -185,9 +185,27 @@
   margin-left: 5px;
 }
 
-.pagination {
-  vertical-align: middle;
+.blogPageButtons {
   text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.codeBlock {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.blogPic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 /* ------------Twitter------------ */

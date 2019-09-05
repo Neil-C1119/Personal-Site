@@ -39,270 +39,216 @@
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title12]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText">A simple mistake</h1>
+      <div class="entry">
+        <p>So I've had a problem with my blog section on my personal website for a while... But I found the solution, and I actually facepalmed when the posts started loading. Here's the link to my question for anyone interested.</p>
+        <p>For anyone who's too lazy, I'll give you a TL;DR. I have this little function here:</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me -->
+          <div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">function</span> showPage(page) {
+          $realBlog.hide();
+            <span style="color: #0000ff">let</span> postsToDisplay = [];
+            <span style="color: #0000ff">for</span> (<span style="color: #0000ff">let</span> i = 0; i &lt; $realBlog.length; i += 1) {
+              <span style="color: #0000ff">if</span> (i &gt;= page * postsPerPage &amp;&amp; i &lt;= page * postsPerPage + postsPerPage - 1) {
+                postsToDisplay.push($realBlog[i]);
+                $(postsToDisplay[i]).show();
+                }
+              }
+              <span style="color: #0000ff">return</span> postsToDisplay;
+            }
+          </pre></div>
+        </div>
+        <p>Now, what it's supposed to do is loop through the blog posts according to the page you're on (the maximum posts per page is 10). So it makes an empty array and pushes the right posts into it, and then shows it. The problem is this little guy right here:</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me -->
+          <div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%">$(postsToDisplay[i]).show();
+          </pre></div>
+        </div>
+        <p>What I wanted it to do is show each post in the array. The problem is: why am I trying to show each object in the array, when I can just show the whole array? I don't know. The fix is this easy:</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me -->
+          <div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%">$(postsToDisplay).show();
+          </pre></div>
+        </div>
+        <p>It's always the simplest mistakes that cause the biggest issues, isn't it? I should know that by now.</p>
+        <p>Anyway, I'm really satisfied now, and everything is working according to plan. I'm gonna do a final run-through of my site, and eventually migrate all of my posts here to my personal site. I'll add one final post here with a link to my personal site once I've finished migrating.</p>
+      </div>
       <div class="entryInfo">
         <span class="tag1">IT</span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date">9/4/2019</span>
+        <span class="time">8:16 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title11]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText">I heard reading is important</h1>
+      <div class="entry">
+        <p>In my Philosophy class last week, we had a discussion about who we would like to converse with for a day, and why. I chimed in that I would love to talk to Elon Musk and just see what kind of ideas for bettering humanity were running through his mind.</p>
+        <p>My professor brought up that he heard Elon was an avid reader, as well as Bill Gates. He said that occasionally they talk about what books they're reading, and that gave me the push I needed to start reading again.</p>
+        <p>I noticed that I needed a bit of a touch-up on my conversational skills, so I picked up How to Talk to Anyone: 92 Little Tricks for Big Success in Relationships. So far, I'm loving it. I even used some of the tips today in my Philosophy class, funny enough. I wanna take a look later at Bill Gates' reading list, or what Elon Musk has been reading through lately, because those are two dudes that I really look up to. </p>
+        <p>I also think I'll ask my dad too. He's my #1 role model. I hope to be like him, even though I've been told I kinda am already.</p>
+      </div>
       <div class="entryInfo">
-        <span class="tag1">IT</span>
+        <span class="tag1">Life</span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date">9/3/2019</span>
+        <span class="time">1:33 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title10]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText">Settling in</h1>
+      <div class="entry">
+        <p>Sorry for the lengthy hiatus. Life has been in the way and I'm just getting settled in to the college life. Why not hop back on the grind on Labor Day, right? </p>
+        <p>So I've been stuck trying to get this blog onto my actual website, with pagination specifically. I've spent hours looking at this code and I can't quite figure out what is going wrong with it.</p>
+        <div class="codeBlock">
+            <!-- HTML generated using hilite.me -->
+            <div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%">$(document).ready(<span style="color: #0000ff">function</span>() {
+              <span style="color: #0000ff">var</span> realBlog = document.getElementsByClassName(<span style="color: #a31515">&quot;realBlog&quot;</span>);
+              <span style="color: #0000ff">var</span> postsPerPage = 10;
+              <span style="color: #0000ff">var</span> pageCount = Math.ceil(realBlog.length/10);
+              <span style="color: #0000ff">var</span> $pagination = $(<span style="color: #a31515">&quot;.pagination&quot;</span>)
+
+              <span style="color: #0000ff">function</span> showPage(page) {
+                $(realBlog).hide();
+                <span style="color: #0000ff">let</span> postsToDisplay = [];
+                <span style="color: #0000ff">for</span> (<span style="color: #0000ff">let</span> i = 0; i &lt; realBlog.length; i += 1) {
+                  <span style="color: #0000ff">if</span> (i &gt;= page * postsPerPage &amp;&amp; i &lt;= page * postsPerPage + postsPerPage - 1) {
+                    postsToDisplay.push(realBlog[i]);
+                    console.log(i); <span style="color: #008000">//Test to see if the loop is running the correct numbers</span>
+                    $(postsToDisplay[i]).show();
+                  }
+                }
+                console.log(postsToDisplay); <span style="color: #008000">//Test to see if the array is full</span>
+                <span style="color: #0000ff">return</span> postsToDisplay;
+              }
+              showPage(0);
+
+              <span style="color: #0000ff">function</span> createPageNumbers() {
+                <span style="color: #0000ff">let</span> createUl = document.createElement(<span style="color: #a31515">&quot;ul&quot;</span>);
+                createUl.className = <span style="color: #a31515">&quot;pageNumbers&quot;</span>;
+                <span style="color: #0000ff">for</span> (<span style="color: #0000ff">let</span> i = 1; i &lt;= Math.ceil(realBlog.length/10); i += 1) {
+                  <span style="color: #0000ff">let</span> createLi = document.createElement(<span style="color: #a31515">&quot;li&quot;</span>);
+                  <span style="color: #0000ff">let</span> createA = document.createElement(<span style="color: #a31515">&quot;a&quot;</span>);
+                  createA.href = <span style="color: #a31515">&quot;#&quot;</span> + i;
+                  createA.textContent = i;
+                  createLi.className = <span style="color: #a31515">&quot;pageButton&quot;</span>;
+                  createLi.append(createA);
+                  createUl.append(createLi);
+                  $(<span style="color: #a31515">&quot;.pagination&quot;</span>).append(createUl);
+                  createA.addEventListener(<span style="color: #a31515">&quot;click&quot;</span>, () =&gt; {
+                    showPage(i-1);
+                  });
+                }
+              }
+
+              createPageNumbers();
+            });
+          </pre></div>
+        </div>
+        <p>So it works on the first page of posts, but not the second or third page... I finally got it together and just posted my question on StackOverflow because I don't want to look at it anymore. Hopefully someone more qualified can help me out.</p>
+        <img src="style/pics/stackOverflow.png" class="blogPic">
+        <p>Anyway, I want to be more consistent again, although school will take priority over coding, so I'll do my very best.</p>
+      </div>
       <div class="entryInfo">
         <span class="tag1">IT</span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date">9/2/2019</span>
+        <span class="time">4:38 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title9]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText"></h1>
+      <div class="entry">
+
+      </div>
       <div class="entryInfo">
-        <span class="tag1">IT</span>
+        <span class="tag1"></span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date"></span>
+        <span class="time"></span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title8]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText"></h1>
+      <div class="entry">
+
+      </div>
       <div class="entryInfo">
-        <span class="tag1">IT</span>
+        <span class="tag1"></span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date"></span>
+        <span class="time"></span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title7]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText"></h1>
+      <div class="entry">
+
+      </div>
       <div class="entryInfo">
-        <span class="tag1">IT</span>
+        <span class="tag1"></span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date"></span>
+        <span class="time"></span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title6]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText"></h1>
+      <div class="entry">
+
+      </div>
       <div class="entryInfo">
-        <span class="tag1">IT</span>
+        <span class="tag1"></span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date"></span>
+        <span class="time"></span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title5]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText"></h1>
+      <div class="entry">
+
+      </div>
       <div class="entryInfo">
-        <span class="tag1">IT</span>
+        <span class="tag1"></span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date"></span>
+        <span class="time"></span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title4]</h1>
-      <p class="entry">[Insert blog entry here]</p>
+      <h1 class="realBlogTitle threeDText"></h1>
+      <div class="entry">
+
+      </div>
       <div class="entryInfo">
-        <span class="tag1">IT</span>
+        <span class="tag1"></span>
         <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
+        <span class="date"></span>
+        <span class="time"></span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title3]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
+    <div class="blogPageButtons">
+      <div class="pagination"></div>
     </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title2]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title1]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title2]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title1]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title2]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title1]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title2]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title1]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title2]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title1]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title2]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText">[Insert Title1]</h1>
-      <p class="entry">[Insert blog entry here]</p>
-      <div class="entryInfo">
-        <span class="tag1">IT</span>
-        <span class="tag2"></span>
-        <span class="date">7/14/2019</span>
-        <span class="time">8:30 p.m.</span>
-      </div>
-      <div class="borderBottom"></div>
-    </div>
-
-    <div class="pagination"></div>
 
   </body>
 
