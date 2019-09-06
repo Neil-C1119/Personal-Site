@@ -135,6 +135,12 @@
 .realBlog {
   background-color: #2d3238;
   padding-bottom: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.container .realblog {
+
 }
 
 .blogBody {
@@ -154,7 +160,11 @@
   text-shadow: 2px 2px 10px black;
   color: #a3a3a3;
   clear: left;
-  list-style-type: circle;
+}
+
+.entry ul li {
+  margin-left: 1.5rem;
+  list-style: circle;
 }
 
 .entryInfo {

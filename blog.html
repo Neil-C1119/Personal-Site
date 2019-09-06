@@ -182,65 +182,181 @@
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText"></h1>
+      <h1 class="realBlogTitle threeDText">My own blog ideas</h1>
       <div class="entry">
-
+        <p>So I've been practicing my JavaScript on codeacademy.com and it's giving me some ideas on how I'd wanna tackle hosting my own blog. It'll require some sweet HTML, CSS, and JS all together.</p>
+        <ul>
+          <li>Use pagination, AKA restricting the amount of visible blog posts on the main page to something (5-10 posts).</li>
+          <li>Using pre-made little HTML and CSS snippets to insert blog info onto main page, with each post having it's own page as well.</li>
+          <li>Devise an easy way to write and post blog posts every day (hopefully), will probably require a basic template to start each post.</li>
+          <li>Use some sort of array to hold a bunch of basic information for each post (Date, time, tags).</li>
+        </ul>
+        <p>That's what I can think of, and what I'm gonna start with, but I'm sure there's more to it.</p>
       </div>
       <div class="entryInfo">
-        <span class="tag1"></span>
+        <span class="tag1">IT</span>
         <span class="tag2"></span>
-        <span class="date"></span>
-        <span class="time"></span>
+        <span class="date">7/12/2019</span>
+        <span class="time">6:32 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText"></h1>
+      <h1 class="realBlogTitle threeDText">My website is almost complete</h1>
       <div class="entry">
-
+        <p>I've been making big progress on the website in the past 2 days. Everything is really shaping up to be what I imagined in my head, so I'm really excited. I'm gonna dedicate this post to explaining what I've done to spice it up.</p>
+        <p>We'll start with the home page. I found some cool fonts before I started making up my site, Libre Barcode 128 for my name in the top left and  Coiny for the navigation bar and footer. I don't think they really match, but 1) They look cool and 2) the 3-D effect looks great on both of them!</p>
+        <p>The 3-D effect is just simple CSS text shadows. I've got a little inflate CSS attribute where when you mouse over navigation links, and it inflates them a tiny bit to show what's selected. One of my favorites is the parallax I set up with me in the background with my trumpet, which was a good amount of CSS as well.</p>
+        <p>I haven't even started on any JavaScript yet.</p>
+        <p>My "About" page still needs some work, but I have the basic positioning and design taken care of. It will let you download my resume though, so that's cool.</p>
+        <p>I wanna do something that centralizes my blog onto the site, rather than having it on Wordpress, but I haven't figured out quite what to do with that yet. I want to give myself an easy way to write articles and add them, but that's gonna require some hefty JavaScript I think so I'll have to get cracking on that.</p>
+        <p>I had to set up IIS to get my header and footer to work correctly. I have them as separate files, and use jQuery to insert them onto the page, but there was some sort of cross origin request problem so I had to set up IIS to fix it. That's not what I'll be hosting it from though, most likely it'll be through someone else, or I might host it myself with an Apache server. Not sure yet.</p>
+        <p>I set up my Twitter timeline to show on the home page because I wanted to start using APIs again, and I've used the Twitter API before so I'm somewhat familiar with it (Thank you Teamtreehouse Fullstack JavaScript lessons). I think it's pretty cool to be able to see my activity on social media, and Twitter is the one I'm most comfortable sharing. </p>
+        <p>My main concern is my blog idea. I wanna use it to kind of flex my JS skills, but I've gotta get back in the game before I can tackle something that large. It's been way too long since I've worked with JS, but there are so many resources online that I think I'll be able to handle it. I hope, at least. </p>
+        <p>Ideally my site will be finished enough in the next few days. There's only a few final touches that need to be made before it can at least function correctly.</p>
+        <p>Maybe there's more to do than I thought...</p>
       </div>
       <div class="entryInfo">
-        <span class="tag1"></span>
+        <span class="tag1">IT</span>
         <span class="tag2"></span>
-        <span class="date"></span>
-        <span class="time"></span>
+        <span class="date">7/11/2019</span>
+        <span class="time">10:13 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText"></h1>
+      <h1 class="realBlogTitle threeDText">Back, with more website news</h1>
       <div class="entry">
-
+        <p>So I've been tidying up my website for a few hours and it's really starting to shape up! I have to fill out my about page, and add a little extra flare for my blog, but so far so good.</p>
+        <p>It's actually really satisfying to make progress. I feel like I've been stuck, but now I'm getting back in the groove. I'll give a detailed explanation tomorrow because I'm pressed on time, but it'll be on it's way. </p>
+        <p>I still need to figure out what to do right now. Once I'm done with my website I'll be free to do whatever, so I'll have to look and see what my options are.</p>
+        <p>Either way, I'm not dead yet, so stay tuned.</p>
       </div>
       <div class="entryInfo">
-        <span class="tag1"></span>
-        <span class="tag2"></span>
-        <span class="date"></span>
-        <span class="time"></span>
+        <span class="tag1">IT</span>
+        <span class="tag2">Life</span>
+        <span class="date">7/1/2019</span>
+        <span class="time">10:00 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText"></h1>
+      <h1 class="realBlogTitle threeDText">I'm not dead yet</h1>
       <div class="entry">
-
+        <p>I'm back on track now. I've been busy with life recently so I haven't had much contact with my computers. Now I finally have time though, so here's some updates:</p>
+        <p>I finally got samba set up proper, and Subsonic as well. I've got my laptop and desktop connected to my shared samba folder, so that's pretty sweet. I'm currently downloading a 180 day trial of Windows Server 2019, so soon I'll have that to play with. VMs are looking pretty good, my Ubuntu server is running smoothly, so I'm excited.</p>
+        <p>The plan is to use the laptop with my server on it to run VirtualBox and add the windows server to that, just to keep everything organized, and all the servers on one machine. Website looks pretty nice, I just need to set up hosting on Ubuntu, and snatch up a domain for it. </p>
+        <p>In other news, I'm set for college. I'm getting a degree in Information System Management, which is apparently a business degree, and I've already attended orientation. I'm ready.</p>
       </div>
       <div class="entryInfo">
-        <span class="tag1"></span>
-        <span class="tag2"></span>
-        <span class="date"></span>
-        <span class="time"></span>
+        <span class="tag1">IT</span>
+        <span class="tag2">Life</span>
+        <span class="date">6/23/2019</span>
+        <span class="time">8:09 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
-      <h1 class="realBlogTitle threeDText"></h1>
+      <h1 class="realBlogTitle threeDText">Stuck, temporarily</h1>
       <div class="entry">
+        <p>Well, I'm in a bit of a pickle.</p>
+        <p>I need a copy of Windows Server. Until I can download one (preferably for free), I can't set up Active directory or any of the sort. I guess I'll go with reading and studying for certifications for now. </p>
+        <p>I want to re-watch some Deviant Ollam and Jayson Street presentations tonight. They're some of my inspiration, with my dad of course.</p>
+      </div>
+      <div class="entryInfo">
+        <span class="tag1">IT</span>
+        <span class="tag2"></span>
+        <span class="date">6/19/2019</span>
+        <span class="time">9:06 pm</span>
+      </div>
+      <div class="borderBottom"></div>
+    </div>
 
+    <div class="container realBlog">
+      <h1 class="realBlogTitle threeDText">Okay, okay</h1>
+      <div class="entry">
+        <p>I admit it... I didn't get much done today. I have learned a lot though.</p>
+        <p>I need to secure a copy of Windows Server 2018 R2. Then, I'll get Active Directory all set up, and go from there. There might be a way to do it with Linux on Windows, but I haven't done the research on that yet so I'm not sure.</p>
+        <p>I did read this post on reddit about evading antivirus using Python and Mestasploit, though.</p>
+        <p>I haven't even touched any of my books yet :( but I will, maybe tonight. </p>
+        <p>The website looks pretty good right now. I don't have everything set up, still need to fill up my "Contact" and "About" pages, but the home page looks fine. It's got a(n old) picture of me, my Twitter feed using their API, and a link to this blog here, but I wanna spice up the blog part a little bit. It'll require me to look back onto my JavaScript days a bit, but I think it's doable.</p>
+      </div>
+      <div class="entryInfo">
+        <span class="tag1">IT</span>
+        <span class="tag2"></span>
+        <span class="date">6/15/2019</span>
+        <span class="time">11:02 pm</span>
+      </div>
+      <div class="borderBottom"></div>
+    </div>
+
+    <div class="container realBlog">
+      <h1 class="realBlogTitle threeDText">Making progress</h1>
+      <div class="entry">
+        <p>So I've got some new stuff set up. Not a whole lab yet, but it's starting to take form.</p>
+        <p><b>Desktop:</b> Kali Linux, Windows XP, and Metasploitable virtual machines through VirtualBox.</p>
+        <p><b>Laptop:</b> Kali Linux virtual machine, through VirtualBox.</p>
+        <p>I've also set up Ubuntu on a separate laptop to act as a server (I'm a weenie but I prefer the GUI), got samba set up, and connected my laptop and desktop to the shared file. It's more for personal use really. There's still more to add though, like:</p>
+        <ul>
+          <li>Build an Active Directory forest for your house</li>
+          <li>Run your own DNS from Active Directory</li>
+          <li>Run your own DHCP server from Active Directory</li>
+          <li>Set up a proxy server</li>
+        </ul>
+        <p>Thank you Daniel Miessler for your list on How to Build a Cybersecurity Career for those, but also:</p>
+        <ul>
+          <li>Host my own website from the server</li>
+          <li>Add Subsonic for media streaming</li>
+        </ul>
+        <p>I'm still working on my website right now, so hosting is on the backburner for the time being, but it'll come soon. </p>
+        <p>I'd actually also like to thank Jayson Street for suggesting I look at iR0nin.com, which has so far been a great resource for these first steps.</p>
+      </div>
+      <div class="entryInfo">
+        <span class="tag1">IT</span>
+        <span class="tag2"></span>
+        <span class="date">6/14/2019</span>
+        <span class="time">8:59 pm</span>
+      </div>
+      <div class="borderBottom"></div>
+    </div>
+
+    <div class="container realBlog">
+      <h1 class="realBlogTitle threeDText">(Probably) A good start</h1>
+      <div class="entry">
+        <p>So I’ve collected a few PDFs of books with some simple google dorks (just use “filetype:pdf” after the title and try your luck), and also Amazon (thank you Amazon for free trials). I’ve also acquired a slightly used Kindle Paperwhite, and I’m ready to absorb some knowledge and ideally put it to use. Still pretty good at procrastinating, so that’s neat.</p>
+        <p>I want to set up my lab either tonight, or Friday at the latest. I’ll stay up late if that’s what it takes. Gotta do some research on what exactly I should set up. I’m thinking probably Windows 7, Windows 8, Kali Linux, a Windows Server, maybe Ubuntu just because. Gotta set it up on my laptop too.</p>
+      </div>
+      <div class="entryInfo">
+        <span class="tag1">IT</span>
+        <span class="tag2"></span>
+        <span class="date">6/12/2019</span>
+        <span class="time">10:25 pm</span>
+      </div>
+      <div class="borderBottom"></div>
+    </div>
+
+    <div class="container realBlog">
+      <h1 class="realBlogTitle threeDText">Here we go</h1>
+      <div class="entry">
+        <p>I have a couple of reasons to start this blog. First of all, I’m hoping it gives me a little extra push to work on my IT skills before, during, and after college. Also, to give me a medium to show findings, tests I’ve run, etc. But mostly the motivation part, because I tend to be really bad at that.</p>
+        <p>Now that I’ve graduated High School, it kinda gave me a little kick to push myself and take some more initiative. Life’s about taking risks, right? Get out of your comfort zone and everything? Well here we are. This is my first step.</p>
+        <p>I’ve found over the past few years that I’m the best at putting my thoughts into writing. It gives me a chance to revise and edit what I’ve got to say, so I can clearly communicate my thoughts. There’s another reason for this blog. It’s not even about people seeing the blog, I just want to be able to document whatever I feel, and hopefully in the future I can come back and take a look.</p>
+        <p>So I have a couple goals for myself here:</p>
+        <ul>
+          <li>Get my CompTIA A+, CompTIA Security+, CompTIA Network+, and possibly CISSP certifications</li>
+          <li>Read a LOT of books</li>
+          <li>Get my lab setup on a desktop and laptop before I move into my dorm</li>
+          <li>Continually update this blog</li>
+          <li>Score a T1 tech support job on my campus</li>
+          <li>Eventually move this blog onto my own site</li>
+          <li>Get some new coding languages under my belt, and finally</li>
+          <li>Enjoy what I’m doing</li>
+        </ul>
+        <p>This list could grow and shrink, but at this moment, these are my plans for the future.</p>
       </div>
       <div class="entryInfo">
         <span class="tag1"></span>
@@ -250,6 +366,7 @@
       </div>
       <div class="borderBottom"></div>
     </div>
+
 
     <div class="blogPageButtons">
       <div class="pagination"></div>
