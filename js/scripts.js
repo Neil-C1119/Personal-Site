@@ -32,6 +32,7 @@ $(document).ready(function() {
       $(".pagination").append(createUl); //Append the unordered list to the page element with the class "pagination"
       createA.addEventListener("click", () => { //Add a click listener to the anchors
         showPage(i - 1); //Run the showPage function for whatever i is clicked
+        window.scrollTo(0,0);
       });
     }
   }

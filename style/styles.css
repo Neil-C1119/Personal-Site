@@ -139,8 +139,12 @@
   padding-right: 100px;
 }
 
-.container .realblog {
+.entry a:link {
+  color: #f5f5f3;
+}
 
+.entry a:visited {
+  color: #f5f5f3;
 }
 
 .blogBody {
