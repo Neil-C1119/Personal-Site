@@ -3,7 +3,7 @@ $(document).ready(function() {
   var numberOfPosts = $realBlog.length;
   var postsPerPage = 10;
   var pageCount = Math.ceil($realBlog.length/10);
-  var $pagination = $(".pagination")
+  var $pagination = $(".pagination");
 
   function showPage(page) {
     $realBlog.hide(); //Hide everything on the page
@@ -37,4 +37,18 @@ $(document).ready(function() {
     }
   }
   createPageNumbers();
+
+  function individualPost() {
+    let postsToListen = []
+    for (let i = 0; i < numberOfPosts; i++) {
+      postsToListen.push($realBlog[i]);
+      let postToDisplay = [];
+      postsToListen[i].addEventListener("click", () => {
+        $realBlog.hide();
+        postToDisplay.push(postsToListen[i]);
+        postToDisplay.show();
+      });
+    }
+  }
+  individualPost();
 });
