@@ -46,9 +46,30 @@ $(document).ready(function() {
       postsToListen[i].addEventListener("click", () => {
         $realBlog.hide();
         postToDisplay.push(postsToListen[i]);
-        postToDisplay.show();
+        $(postToDisplay).show();
+        $(".blogPageButtons").hide();
+        $(".borderBottom").hide();
+        if ($(".backToBlogs").length) {
+          console.log("It exists already!");
+        }
+        else {
+          let createA = document.createElement("a");
+          createA.href = "#";
+          let backToBlogs = document.createElement("p");
+          backToBlogs.innerText = "Back to the blogs";
+          backToBlogs.className = "backToBlogs";
+          $(createA).append(backToBlogs);
+          $(".realBlog").append(createA);
+          createA.addEventListener("click", () => {
+            showPage(0);
+          });
+        }
       });
     }
   }
   individualPost();
+
+  function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
 });
