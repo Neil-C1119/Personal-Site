@@ -198,11 +198,15 @@
 
 .pageButton {
   background-color: white;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 .blogPageButtons {
   text-align: center;
+}
+
+.blogPageButtons a:active {
+  box-shadow: 2px 2px 10px #FF0000, -2px -2px 10px #00FFFF;
 }
 
 .pagination {
@@ -229,6 +233,7 @@
   font-family: 'Coiny', cursive;
   color: white;
   float: left;
+  margin-top: 20px;
 }
 
 /* ------------Twitter------------ */
