@@ -7,6 +7,9 @@ $(document).ready(function() {
   var $backToBlogs = $(".backToBlogs");
   var backToBlogs = document.getElementById("backToBlogs");
   var $blogPageButtons = $(".blogPageButtons");
+  var $pageButton = $(".pageButton");
+  var $pageNumbers = $(".pageNumbers");
+  var pageButtonsArray = [];
 
   function showPage(page) {
     $realBlog.hide(); //Hide everything on the page
@@ -64,13 +67,20 @@ $(document).ready(function() {
   }
   individualPost(); //Run the function so it adds all eventListeners to each post
 
-  if (document.URL.contains("blog.html")) {
-    
+  for(i = 0; i < $pageNumbers.length(); i++) {
+    console.log($pageNumbers.length());
+    pageButtonsArray.push($pageButton[i]);
   }
-  elseif () {
 
-  }
-  elseif () {
+  console.log(pageButtonsArray);
 
-  }
+  // if (window.location.href.indexOf("1")) {
+  //   pageButtonsArray[0].className = "active";
+  // }
+  // else if (window.location.href.indexOf("2")) {
+  //   pageButtonsArray[1].className = "active";
+  // }
+  // else if (window.location.href.indexOf("3")) {
+  //   pageButtonsArray[2].className = "active";
+  // }
 });

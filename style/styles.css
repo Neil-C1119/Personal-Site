@@ -205,7 +205,7 @@
   text-align: center;
 }
 
-.blogPageButtons a:active {
+a .active {
   box-shadow: 2px 2px 10px #FF0000, -2px -2px 10px #00FFFF;
 }
 
