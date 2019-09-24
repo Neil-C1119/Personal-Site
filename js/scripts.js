@@ -8,10 +8,10 @@ $(document).ready(function() {
   var backToBlogs = document.getElementById("backToBlogs");
   var $blogPageButtons = $(".blogPageButtons");
   var $pageButton = $(".pageButton");
-  var $pageNumbers = $(".pageNumbers");
   var pageButtonsArray = [];
 
   function showPage(page) {
+    showPage.called = true;
     $realBlog.hide(); //Hide everything on the page
     $backToBlogs.hide(); //Hide the "Back to the Blogs" div at the bottom of the page
     $blogPageButtons.show(); //Show the blogPageButtons in case they were hidden before
@@ -23,13 +23,14 @@ $(document).ready(function() {
       }
     }
     return postsToDisplay;
-    createPageNumbers(); //Run the createPageNumbers whenever the showPage function is called
+    createPageNumbers(); //Run createPageNumbers whenever the showPage function is called
   }
   showPage(0); //Run the function so when you open up the blog page it starts on page 1
 
   function createPageNumbers() {
     var createUl = document.createElement("ul"); //Declare createUl so every time it's called it'll create an unordered list object
     createUl.className = "pageNumbers"; //Give the unordered list object a class
+    createUl.id = "pageNumbers";
     for (let i = 1; i <= pageCount; i += 1) { //Count the amount of blog posts, and for every 10 posts...
       var createLi = document.createElement("li"); //Create a list item
       var createA = document.createElement("a"); //Create an anchor item
@@ -67,20 +68,29 @@ $(document).ready(function() {
   }
   individualPost(); //Run the function so it adds all eventListeners to each post
 
-  for(i = 0; i < $pageNumbers.length(); i++) {
-    console.log($pageNumbers.length());
-    pageButtonsArray.push($pageButton[i]);
+  var pageNumbers = document.getElementById("pageNumbers"); //Grab the HTML element with the ID "pageNumbers"
+  for(i = 0; i < pageNumbers.childNodes.length; i++) { //Loop through the amount of list items in the pageNumbers list and...
+    pageButtonsArray.push(pageNumbers.childNodes[i]); //Push the list item into the pageButtonsArray
   }
 
-  console.log(pageButtonsArray);
+  pageNumbers.childNodes.addEventListener("click", function(){
+    if(showPage.called) {
+      if (window.location.href.indexOf("1")) {
+        pageButtonsArray[0].className = "pageButton inflate active";
+        pageButtonsArray[1].className = "pageButton inflate";
+        pageButtonsArray[2].className = "pageButton inflate";
+      }
+      else if (window.location.href.indexOf("2")) {
+        pageButtonsArray[0].className = "pageButton inflate";
+        pageButtonsArray[1].className = "pageButton inflate active";
+        pageButtonsArray[2].className = "pageButton inflate";
+      }
+      else if (window.location.href.indexOf("3")) {
+        pageButtonsArray[0].className = "pageButton inflate";
+        pageButtonsArray[1].className = "pageButton inflate";
+        pageButtonsArray[2].className = "pageButton inflate active";
+      }
+    }
+  });
 
-  // if (window.location.href.indexOf("1")) {
-  //   pageButtonsArray[0].className = "active";
-  // }
-  // else if (window.location.href.indexOf("2")) {
-  //   pageButtonsArray[1].className = "active";
-  // }
-  // else if (window.location.href.indexOf("3")) {
-  //   pageButtonsArray[2].className = "active";
-  // }
 });
