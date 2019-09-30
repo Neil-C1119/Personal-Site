@@ -94,15 +94,18 @@
   bottom: 350px;
 }
 
+/* ------------ABOUT------------ */
+
 .aboutBody {
   background-color: #025377;
   font-size: 22px;
   font-family: 'Raleway', sans-serif;
   text-shadow: 2px 2px 10px black;
   color: white;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  padding-left: 450px;
+  padding-bottom: 140px;
+  padding-top: 140px;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 .aboutPicture {
@@ -116,7 +119,6 @@
 
 .aboutText {
   float: right;
-  padding-right: 300px;
 }
 
 .aboutHeader {
@@ -128,7 +130,7 @@
 }
 
 .resumeLink {
-  padding-right: 350px;
+  font-family: 'Coiny', cursive;
 }
 
 /* ------------Blog------------ */
@@ -205,8 +207,13 @@
   text-align: center;
 }
 
-a .active {
-  box-shadow: 2px 2px 10px #FF0000, -2px -2px 10px #00FFFF;
+.pagination li.active {
+  box-shadow: 3px 3px 7px #FF0000, -3px -3px 7px #00FFFF;
+  background-color: white;
+}
+
+.pagination li.active a {
+  color: #444 !important;
 }
 
 .pagination {
@@ -254,26 +261,6 @@ a .active {
   margin: auto;
   width: 60%;
   padding-bottom: 37px;
-}
-
-/* ------------Blog Placeholder------------ */
-.blog {
-  background-color: #02686f;
-  font-size: 50px;
-  font-family: 'Coiny', cursive;
-  text-shadow: 2px 2px 10px black;
-}
-
-.blogTitle {
-  color: white;
-  text-align: center;
-  padding-top: 20px;
-}
-
-.blogPlaceholder {
-  color: lightblue;
-  text-align: center;
-  margin-bottom: 0px;
 }
 
 /* ------------Contact------------ */

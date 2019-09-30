@@ -10,8 +10,25 @@ $(document).ready(function() {
   var $pageButton = $(".pageButton");
   var pageButtonsArray = [];
 
+  function activePage() {
+    if (window.location.href.indexOf("#1") !== -1) { //If you're on the first page
+      pageButtonsArray[0].className = "pageButton inflate active";
+      pageButtonsArray[1].className = "pageButton inflate";
+      pageButtonsArray[2].className = "pageButton inflate";
+    }
+    else if (window.location.href.indexOf("#2") !== -1) { //If you're on the second page
+      pageButtonsArray[0].className = "pageButton inflate";
+      pageButtonsArray[1].className = "pageButton inflate active";
+      pageButtonsArray[2].className = "pageButton inflate";
+    }
+    else if (window.location.href.indexOf("#3") !== -1) { //If you're on the third page
+      pageButtonsArray[0].className = "pageButton inflate";
+      pageButtonsArray[1].className = "pageButton inflate";
+      pageButtonsArray[2].className = "pageButton inflate active";
+    }
+  }
+
   function showPage(page) {
-    showPage.called = true;
     $realBlog.hide(); //Hide everything on the page
     $backToBlogs.hide(); //Hide the "Back to the Blogs" div at the bottom of the page
     $blogPageButtons.show(); //Show the blogPageButtons in case they were hidden before
@@ -30,7 +47,7 @@ $(document).ready(function() {
   function createPageNumbers() {
     var createUl = document.createElement("ul"); //Declare createUl so every time it's called it'll create an unordered list object
     createUl.className = "pageNumbers"; //Give the unordered list object a class
-    createUl.id = "pageNumbers";
+    createUl.id = "pageNumbers"; //Give the unordered list object an ID
     for (let i = 1; i <= pageCount; i += 1) { //Count the amount of blog posts, and for every 10 posts...
       var createLi = document.createElement("li"); //Create a list item
       var createA = document.createElement("a"); //Create an anchor item
@@ -43,6 +60,7 @@ $(document).ready(function() {
       createA.addEventListener("click", () => { //Add a click listener to the anchors
         showPage(i - 1); //Run the showPage function for whatever i is clicked
         window.scrollTo(0,0); //Scroll to the top of the page
+        setTimeout(activePage, 50); //Wait 50 milliseconds before running the activePage function (so it reads the proper window.location.href.indexOf)
       });
     }
   }
@@ -62,6 +80,13 @@ $(document).ready(function() {
         $backToBlogs.show(); //Show the "Back to the Blogs" div at the bottom of the page
         backToBlogs.addEventListener("click", () => { //When you click on the "Back to the Blogs" div...
           showPage(0); //Show the first page of blog posts
+          pageButtonsArray[0].className = "pageButton inflate active"; //Make the first page the active one, since it redirects you back to it
+          if (window.location.href.indexOf("#2") !== -1) { //If you were on the second page previously...
+            pageButtonsArray[1].className = "pageButton inflate"; //Reset the 2nd page button's classnames
+          }
+          else if (window.location.href.indexOf("#3") !== -1) { //If you were on the third page previously...
+            pageButtonsArray[2].className = "pageButton inflate"; //Reset the 3rd page button's classnames
+          }
         });
       });
     }
@@ -71,26 +96,6 @@ $(document).ready(function() {
   var pageNumbers = document.getElementById("pageNumbers"); //Grab the HTML element with the ID "pageNumbers"
   for(i = 0; i < pageNumbers.childNodes.length; i++) { //Loop through the amount of list items in the pageNumbers list and...
     pageButtonsArray.push(pageNumbers.childNodes[i]); //Push the list item into the pageButtonsArray
+    pageButtonsArray[0].className = "pageButton inflate active"; //Set the first page button as the active page
   }
-
-  pageNumbers.childNodes.addEventListener("click", function(){
-    if(showPage.called) {
-      if (window.location.href.indexOf("1")) {
-        pageButtonsArray[0].className = "pageButton inflate active";
-        pageButtonsArray[1].className = "pageButton inflate";
-        pageButtonsArray[2].className = "pageButton inflate";
-      }
-      else if (window.location.href.indexOf("2")) {
-        pageButtonsArray[0].className = "pageButton inflate";
-        pageButtonsArray[1].className = "pageButton inflate active";
-        pageButtonsArray[2].className = "pageButton inflate";
-      }
-      else if (window.location.href.indexOf("3")) {
-        pageButtonsArray[0].className = "pageButton inflate";
-        pageButtonsArray[1].className = "pageButton inflate";
-        pageButtonsArray[2].className = "pageButton inflate active";
-      }
-    }
-  });
-
 });

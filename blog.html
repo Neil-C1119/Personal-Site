@@ -7,6 +7,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Materialize css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -36,6 +37,95 @@
   <body class="blogBody">
     <div class="container">
       <p class="welcomeBlog">Welcome to the Big Hair Blog</p>
+    </div>
+
+    <div class="container realBlog">
+      <h1 class="realBlogTitle threeDText">Sorry for the Hiatus & Behind the Scenes of my Active Page JS</h1>
+      <div class="entry">
+        <p>I've been stuck on this active page thing for a while. You'd notice if you could see the GitHub Repo of my website. I'll show each of the little snippets so you don't have to dig through it.</p>
+        <p>First, we start off with the function I made to handle this. It's not very efficient, but nontheless I pulled it off:</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%">  <span style="color: #0000ff">function</span> activePage() {
+    <span style="color: #0000ff">if</span> (window.location.href.indexOf(<span style="color: #a31515">&quot;#1&quot;</span>) !== -1) { <span style="color: #008000">//If you&#39;re on the first page</span>
+      pageButtonsArray[0].className = <span style="color: #a31515">&quot;pageButton inflate active&quot;</span>;
+      pageButtonsArray[1].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>;
+      pageButtonsArray[2].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>;
+    }
+    <span style="color: #0000ff">else</span> <span style="color: #0000ff">if</span> (window.location.href.indexOf(<span style="color: #a31515">&quot;#2&quot;</span>) !== -1) { <span style="color: #008000">//If you&#39;re on the second page</span>
+      pageButtonsArray[0].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>;
+      pageButtonsArray[1].className = <span style="color: #a31515">&quot;pageButton inflate active&quot;</span>;
+      pageButtonsArray[2].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>;
+    }
+    <span style="color: #0000ff">else</span> <span style="color: #0000ff">if</span> (window.location.href.indexOf(<span style="color: #a31515">&quot;#3&quot;</span>) !== -1) { <span style="color: #008000">//If you&#39;re on the third page</span>
+      pageButtonsArray[0].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>;
+      pageButtonsArray[1].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>;
+      pageButtonsArray[2].className = <span style="color: #a31515">&quot;pageButton inflate active&quot;</span>;
+    }
+  }
+</pre></div>
+        </div>
+        <p>I commented it in, but basically it just checks which page you're on by looking at the href of the page, and changes the pagination buttons on the bottom accordingly. I use a class called "active" to discern which link is active.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%">createA.addEventListener(<span style="color: #a31515">&quot;click&quot;</span>, () =&gt; { <span style="color: #008000">//Add a click listener to the anchors</span>
+  showPage(i - 1); <span style="color: #008000">//Run the showPage function for whatever i is clicked</span>
+  window.scrollTo(0,0); <span style="color: #008000">//Scroll to the top of the page</span>
+  setTimeout(activePage, 50); <span style="color: #008000">//Wait 50 milliseconds before running the activePage function (so it reads the proper window.location.href.indexOf)</span>
+});
+</pre></div>
+
+        </div>
+        <p>For this one, I added to the eventlistener that is already on the pagination buttons. It waits a tiny bit so when you click the button the page has time to change, and then runs the first function to check which link is active.</p>
+        <p>I want to take this time to quickly go over something else I added, which is a way to view single blog posts by clicking on them. </p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">function</span> individualPost() {
+  <span style="color: #0000ff">let</span> postsToListen = [] <span style="color: #008000">//An empty array for posts to add an eventlistener to</span>
+  <span style="color: #0000ff">for</span> (<span style="color: #0000ff">let</span> i = 0; i &lt; numberOfPosts; i++) { <span style="color: #008000">//Loop throught all of the posts on the page and...</span>
+    postsToListen.push($realBlog[i]); <span style="color: #008000">//Push each blog post into the postsToListen array</span>
+    <span style="color: #0000ff">let</span> postToDisplay = []; <span style="color: #008000">//An empty array for deciding which post to display</span>
+    postsToListen[i].addEventListener(<span style="color: #a31515">&quot;click&quot;</span>, () =&gt; { <span style="color: #008000">//When you click on a specific post...</span>
+      $realBlog.hide(); <span style="color: #008000">//Hide every post</span>
+      postToDisplay.push(postsToListen[i]); <span style="color: #008000">//Push the clicked post into the postToDisplay array</span>
+      $(postToDisplay).show(); <span style="color: #008000">//Show what&#39;s in the postToDisplay array</span>
+      $(<span style="color: #a31515">&quot;.blogPageButtons&quot;</span>).hide(); <span style="color: #008000">//Hide the page buttons at the bottom</span>
+      $(<span style="color: #a31515">&quot;.borderBottom&quot;</span>).hide(); <span style="color: #008000">//Hide the bottom border of the posts</span>
+      $backToBlogs.show(); <span style="color: #008000">//Show the &quot;Back to the Blogs&quot; div at the bottom of the page</span>
+      backToBlogs.addEventListener(<span style="color: #a31515">&quot;click&quot;</span>, () =&gt; { <span style="color: #008000">//When you click on the &quot;Back to the Blogs&quot; div...</span>
+        showPage(0); <span style="color: #008000">//Show the first page of blog posts</span>
+      });
+    });
+  }
+}
+</pre></div>
+
+
+        </div>
+        <p>Once I figured these two out I though I was in the clear, but not yet. I did some quick testing and found that when I would use my backToBlogs functionality, and then click the "Back to Blogs" button, there would be two pages highlighted.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%">backToBlogs.addEventListener(<span style="color: #a31515">&quot;click&quot;</span>, () =&gt; { <span style="color: #008000">//When you click on the &quot;Back to the Blogs&quot; div...</span>
+  showPage(0); <span style="color: #008000">//Show the first page of blog posts</span>
+  pageButtonsArray[0].className = <span style="color: #a31515">&quot;pageButton inflate active&quot;</span>; <span style="color: #008000">//Make the first page the active one, since it redirects you back to it</span>
+  <span style="color: #0000ff">if</span> (window.location.href.indexOf(<span style="color: #a31515">&quot;#2&quot;</span>) !== -1) { <span style="color: #008000">//If you were on the second page previously...</span>
+    pageButtonsArray[1].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>; <span style="color: #008000">//Reset the 2nd page button&#39;s classnames</span>
+  }
+  <span style="color: #0000ff">else</span> <span style="color: #0000ff">if</span> (window.location.href.indexOf(<span style="color: #a31515">&quot;#3&quot;</span>) !== -1) { <span style="color: #008000">//If you were on the third page previously...</span>
+    pageButtonsArray[2].className = <span style="color: #a31515">&quot;pageButton inflate&quot;</span>; <span style="color: #008000">//Reset the 3rd page button&#39;s classnames</span>
+  }
+});
+</pre></div>
+
+        </div>
+        <p>I added a little bit to the backToBlogs eventlistener, so it checks if you were on the second or third page before you viewed a single blog post, and then resets the classes of the corresponding button.</p>
+        <p>All in all these two functionalities kept me busy for almost a month. There was a lot of testing and hair-pulling, but I got them to work how I intended them to.</p>
+        <p>I'm gonna need to put some last finishing touches on the website, and then it'll finally be live. I'll have to buy a domain and decide if I want to host it, or have someone else do it. Probably someone else.</p>
+      </div>
+
+      <div class="entryInfo">
+        <span class="tag1">IT</span>
+        <span class="tag2"></span>
+        <span class="date">9/29/2019</span>
+        <span class="time">3:50 pm</span>
+      </div>
+      <div class="borderBottom"></div>
     </div>
 
     <div class="container realBlog">
@@ -333,7 +423,7 @@
       <div class="entryInfo">
         <span class="tag1">IT</span>
         <span class="tag2"></span>
-        <span class="date">6/12/2019</span>
+        <span class="date">6/13/2019</span>
         <span class="time">10:25 pm</span>
       </div>
       <div class="borderBottom"></div>
@@ -359,10 +449,10 @@
         <p>This list could grow and shrink, but at this moment, these are my plans for the future.</p>
       </div>
       <div class="entryInfo">
-        <span class="tag1"></span>
-        <span class="tag2"></span>
-        <span class="date"></span>
-        <span class="time"></span>
+        <span class="tag1">IT</span>
+        <span class="tag2">Life</span>
+        <span class="date">6/12/2019</span>
+        <span class="time">10:25 pm</span>
       </div>
       <div class="borderBottom"></div>
     </div>
