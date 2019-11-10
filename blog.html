@@ -41,6 +41,163 @@
     </div>
 
     <div class="container realBlog">
+      <h1 class="realBlogTitle threeDText">Finally Responsive</h1>
+      <div class="entry">
+
+        <p>I finally buckled down tonight and fixed the mobile versions of my site. In all, it took around 4 hours minus the time it took for me to make some ramen and tea, because I want my styling to look as good as I can get it. I'm sure I will fidget with it, but for now it functions and I'm satisfied. With that said, I have a lot of styling to go over.</p>
+        <p>I found that some things look fine just by adjusting the phone version, or the iPad version, so some of the media queries only have two instead of three. We will start with what I did with the header and footer.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 415px) {
+  .myName {
+    font-size: 25.5vw;
+  }
+  .navBar {
+    <span style="color: #0000ff">float</span>: left;
+    margin: 0;
+    margin-left: 15px;
+  }
+  .navList {
+    <span style="color: #0000ff">float</span>: left;
+    font-size: 5vw;
+  }
+}
+
+<span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 350px) {
+  .navBar {
+    margin-left: 10px;
+  }
+}
+</pre></div>
+
+        </div>
+        <p>I changed the font for my name to scale with the viewport, and found that 25.5% worked fine with both media queries, so I left it as is. The navigation bar needed a little tweaking with both phones and smaller phones (iPhone 5), with the margin being reset and slightly smaller on the latter, but I have it floating to the left so it fits under my name.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 415px) {
+  .contactMe {
+    <span style="color: #0000ff">float</span>: left;
+    font-size: 5vw;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+  .footer {
+    padding: 0;
+  }
+}
+
+<span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 350px) {
+  .contactMe {
+    padding-left: 8px;
+  }
+}
+</pre></div>
+
+        </div>
+        <p>The footer required a bit of tweaking as well, first by floating it to the left so everything fit. I changed the font size to scale with the viewport here as well, just to make it less specific according to sizes. The margin and padding were for added aesthetic.</p>
+        <p>Now I'll move on to the more painful tweaking, on the home page's body.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 415px) {
+  .centerBottom {
+    bottom: 200px;
+  }
+  .meetMe{
+    font-size: 17vw;
+  }
+  .parallax {
+    height: 700px;
+    background-attachment: scroll;
+    background-position: 27% 0%;
+  }
+}
+</pre></div>
+
+        </div>
+        <p>I fixed my centerBottom class because the text over my picture looked absolutely disgusting on mobile. It was huge, and overflowed into the header so you weren't able to click any of the navigation bar items. I also changed the font to scale with the viewport, because the text was way too huge. With the parallax, I had to change it because on mobile it just zoomed in on my face and didn't move at all, so it's set to scroll now. I also fixed the position so the picture would actually show me instead of the background of the picture. Out of everything this section of the site was what I spent most on, because I couldn't quite get it how I wanted.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 415px) {
+  .myTwitter {
+    width: 80%;
+  }
+}
+</pre></div>
+
+        </div>
+        <p>I also fixed my Twitter feed a little bit by stretching it out a bit.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 1200px) {
+  .aboutBody {
+    padding: 40px;
+    text-align: center;
+  }
+  .aboutPicture {
+    margin: 40px;
+    <span style="color: #0000ff">float</span>: none;
+  }
+  .aboutText {
+    <span style="color: #0000ff">float</span>: none;
+    margin-bottom: 75px;
+  }
+}
+<span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 800px) {
+  .aboutBody {
+    padding: 0;
+    padding-top: 10px;
+  }
+  .aboutPicture {
+    margin: 0;
+  }
+  .aboutText {
+    font-size: 5vw;
+    margin-bottom: 0;
+  }
+}
+<span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 350px) {
+  .aboutPicture {
+    max-width: 95%;
+    height: 60%;
+  }
+}
+</pre></div>
+
+        </div>
+        <p>My about section looked pretty nasty, but it was the second thing I tackled so I had more of an idea of what I wanted it to look like. I fixed the body so that it's centered and the padding as well, because the way I have it set up on desktop just squishes the text to the left side on mobile. The picture was overflowing off the right side so I had to fix the sizing and margin so it actually stayed on the page. The text is also scaled to the viewport now. For smaller phones I had to tweak the picture so it would look just right.</p>
+        <div class="codeBlock">
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-radius:5px;"><pre style="margin: 0; line-height: 125%"><span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 1200px) {
+  .realBlog {
+    padding: 0;
+  }
+}
+<span style="border: 1px solid #FF0000">@</span>media screen and (max-width: 415px) {
+  .welcomeBlog {
+    font-size: 13vw;
+  }
+  .realBlogTitle {
+    font-size: 10vw;
+  }
+  .entry {
+    font-size: 5vw;
+  }
+  .backToBlogs {
+    font-size:7vw ;
+  }
+}
+</pre></div>
+
+        </div>
+        <p>The blog section was super easy, because there weren't a ton of separate elements to fix. I tweaked the container around each post so it would fit nicely. I also changed all of the fonts so that they scaled well, but still held their weight in importance according to size. </p>
+        <p>I put this off for way too long. I could've even done it in pieces but for some reason I felt the need to get it all done in one shot. Either way, I'm glad it's taken care of because having a responsive site is pretty important. Next time I make a website from scratch I will keep it in mind WHILE making it, instead of afterward. I'll be able to make it easier for myself next time, but I've learned now, and that's what's important.</p>
+        <p>Also I swear I'll keep up the blog more consistently, I just haven't touched the site because of the looming dread of fixing the responsiveness. I'm not sure what's next for the site but I'll look through and see what I can add or fix.</p>
+
+      </div>
+      <div class="entryInfo">
+        <span class="tag1">IT</span>
+        <span class="tag2"></span>
+        <span class="date">11/10/2019</span>
+        <span class="time">12:55 am</span>
+      </div>
+      <div class="borderBottom"></div>
+    </div>
+
+    <div class="container realBlog">
       <h1 class="realBlogTitle threeDText">Sorry for the Hiatus & Behind the Scenes of my Active Page JS</h1>
       <div class="entry">
         <p>I've been stuck on this active page thing for a while. You'd notice if you could see the GitHub Repo of my website. I'll show each of the little snippets so you don't have to dig through it.</p>

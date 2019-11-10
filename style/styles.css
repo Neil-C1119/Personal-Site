@@ -63,12 +63,7 @@
 
 @media screen and (max-width: 350px) {
   .navBar {
-    margin: 0;
     margin-left: 10px;
-  }
-  .navList {
-    float: left;
-    font-size: 5vw;
   }
 }
 
@@ -117,13 +112,9 @@
     font-size: 17vw;
   }
   .parallax {
-    position: relative;
-    background-image: url("../pics/meTrumpet.jpg");
     height: 700px;
     background-attachment: scroll;
     background-position: 27% 0%;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }
 
@@ -183,15 +174,12 @@
 @media screen and (max-width: 800px) {
   .aboutBody {
     padding: 0;
-    text-align: center;
     padding-top: 10px;
   }
   .aboutPicture {
-    float: none;
     margin: 0;
   }
   .aboutText {
-    float: none;
     font-size: 5vw;
     margin-bottom: 0;
   }
