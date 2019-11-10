@@ -301,6 +301,10 @@
   margin-top: 20px;
 }
 
+.ad {
+  margin: auto;
+}
+
 @media screen and (max-width: 1200px) {
   .realBlog {
     padding: 0;
