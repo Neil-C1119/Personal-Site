@@ -303,11 +303,15 @@
 
 .ad {
   margin: auto;
+  width: 1200px;
 }
 
 @media screen and (max-width: 1200px) {
   .realBlog {
     padding: 0;
+  }
+  .ad {
+    width: 700px;
   }
 }
 @media screen and (max-width: 415px) {
@@ -322,6 +326,9 @@
   }
   .backToBlogs {
     font-size:7vw ;
+  }
+  .ad {
+    width: 300px;
   }
 }
 
