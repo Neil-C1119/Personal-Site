@@ -15,16 +15,25 @@ $(document).ready(function() {
       pageButtonsArray[0].className = "pageButton inflate active";
       pageButtonsArray[1].className = "pageButton inflate";
       pageButtonsArray[2].className = "pageButton inflate";
+      pageButtonsArray[3].className = "pageButton inflate";
     }
     else if (window.location.href.indexOf("#2") !== -1) { //If you're on the second page
       pageButtonsArray[0].className = "pageButton inflate";
       pageButtonsArray[1].className = "pageButton inflate active";
       pageButtonsArray[2].className = "pageButton inflate";
+      pageButtonsArray[3].className = "pageButton inflate";
     }
     else if (window.location.href.indexOf("#3") !== -1) { //If you're on the third page
       pageButtonsArray[0].className = "pageButton inflate";
       pageButtonsArray[1].className = "pageButton inflate";
       pageButtonsArray[2].className = "pageButton inflate active";
+      pageButtonsArray[3].className = "pageButton inflate";
+    }
+    else if (window.location.href.indexOf("#4") !== -1) { //If you're on the third page
+      pageButtonsArray[0].className = "pageButton inflate";
+      pageButtonsArray[1].className = "pageButton inflate";
+      pageButtonsArray[2].className = "pageButton inflate";
+      pageButtonsArray[3].className = "pageButton inflate active";
     }
   }
 
@@ -86,6 +95,9 @@ $(document).ready(function() {
           }
           else if (window.location.href.indexOf("#3") !== -1) { //If you were on the third page previously...
             pageButtonsArray[2].className = "pageButton inflate"; //Reset the 3rd page button's classnames
+          }
+          else if (window.location.href.indexOf("#4") !== -1) { //If you were on the third page previously...
+            pageButtonsArray[3].className = "pageButton inflate"; //Reset the 3rd page button's classnames
           }
         });
       });
